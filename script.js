@@ -669,16 +669,19 @@ function displayProducts(products) {
 
     // Loop through the products array and generate HTML for each product
     products.forEach(product => {
-       
-          const productHTML= `
+        const productHTML = `
             <div class="product-item">
-                <img src="${product.image}" alt="${product.name}" width="200">
-                <h3>${product.name}</h3>
-                <p>Price: $${(product.priceCents / 100).toFixed(2)}</p>
-                <p>Rating: ${product.rating.stars}/5 (${product.rating.count} reviews)</p>
+                <img src="${product.image}" alt="${product.name}" class="product-image" />
+                <h3 class="product-name">${product.name}</h3>
+                <p class="product-rating">Rating: ${product.rating.stars} stars (${product.rating.count} reviews)</p>
+                <p class="product-price">$${(product.priceCents / 100).toFixed(2)}</p>
             </div>
         `;
-        productContainer.innerHTML += productHTML; // Append the new product HTML
+        
+        // Insert product HTML into the container
+        productContainer.innerHTML += productHTML;
     });
 }
+
+// Call the function to display products when the page loads
 displayProducts(products);
