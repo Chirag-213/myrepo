@@ -16,4 +16,19 @@ const products = [
     }
 ];
 
-console.log(products);
+// Function to display product data
+function displayProduct(product) {
+    const productContainer = document.getElementById('product');
+
+    const productHTML = `
+        <img src="${product.image}" alt="${product.name}" width="200">
+        <h3>${product.name}</h3>
+        <p>Price: $${(product.priceCents / 100).toFixed(2)}</p>
+        <p>Rating: ${product.rating.stars}/5 (${product.rating.count} reviews)</p>
+    `;
+
+    productContainer.innerHTML = productHTML;
+}
+
+// Call the function to display the first product
+displayProduct(products[0]);
