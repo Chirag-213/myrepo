@@ -667,8 +667,8 @@ function displayProducts(products) {
 
     // Loop through the products array and generate HTML for each product
     products.forEach(product => {
-        const productHTML="";
-          productHTML+= `
+       
+          const productHTML= `
             <div class="product-item">
                 <img src="${product.image}" alt="${product.name}" width="200">
                 <h3>${product.name}</h3>
